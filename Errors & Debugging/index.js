@@ -12,30 +12,40 @@
 // }
 
 function calculateTotal(numbers) {
+  validateNumbers(numbers);
   if (!numbers || !Array.isArray(numbers)) throw new Error("Input must be an array");
   return numbers.reduce((acc, curr) => acc + curr, 0);
 }
 
 function calculateAverage(numbers){
+  validateNumbers(numbers);
   if(!numbers || numbers.length === 0) throw Error("cannot calculate ave of empty array")
   const sum = numbers.reduce((acc, curr) => acc + curr, 0);
   return (sum / numbers.length);
 }
 function findPositive(numbers){
+  validateNumbers(numbers);
   if(!numbers || numbers.length === 0) throw Error("cannot find pos of empty array")
   const positiveNumbers = numbers.filter(number => number > 0);
   return positiveNumbers;
 }
 
 function findMax(numbers){
+    validateNumbers(numbers);
+    if (!numbers || numbers.length === 0) throw new Error("Cannot find max of empty array");
     const max = numbers.reduce((accumulator, currentValue) => {
     return Math.max(accumulator, currentValue);
   }, -Infinity);
   return max;
 }
 
+function validateNumbers(numbers) {
+  if (!numbers || !Array.isArray(numbers)) throw new Error("Input must be an array");
+  if (!numbers.every(n => typeof n === "number" && !isNaN(n))) throw new Error("Array must contain only numbers");
+}
+
 const data1 = [-1, 2, -3];
-const data2 = [];
+const data2 = [2, 7];
 
 try {
   console.log(calculateTotal(data1));
