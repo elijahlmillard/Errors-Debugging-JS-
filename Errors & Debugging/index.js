@@ -1,15 +1,15 @@
 // STARTER CODE
 
-// function calculateTotal(numbers) {
-//  let total = 0;
-//  for (let i = 0; i <= numbers.length - 1; i++) { // BUG: <= causes undefined
-//    total += numbers[i];
-//   //  console.log(total);
-//  }
-// //  console.log(typeof total);
-// //  console.log("returning:", total, typeof total);
-//  return total;
-// }
+function calculateTotal(numbers) {
+ let total = 0;
+ for (let i = 0; i <= numbers.length - 1; i++) { // BUG: <= causes undefined
+   total += numbers[i];
+  //  console.log(total);
+ }
+//  console.log(typeof total);
+//  console.log("returning:", total, typeof total);
+ return total;
+}
 
 function calculateTotal(numbers) {
   validateNumbers(numbers);
@@ -30,11 +30,17 @@ function findPositive(numbers){
 }
 
 function findMax(numbers){
+    //validate numbers is a function that checks if passed value is array
     validateNumbers(numbers);
+    //this if statement throws an error if the array is empty
     if (!numbers || numbers.length === 0) throw new Error("Cannot find max of empty array");
+    //reduce runs for every item in the array, accumulator is a stored value that carries across
+    //checks, and currentValue is the number of the array it is currently checking
+    //for every value in array, it checks if accumulator is greater then the current value
     const max = numbers.reduce((accumulator, currentValue) => {
     return Math.max(accumulator, currentValue);
   }, -Infinity);
+  //return the max value after checking all items in array
   return max;
 }
 
