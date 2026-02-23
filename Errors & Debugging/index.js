@@ -13,7 +13,6 @@
 
 function calculateTotal(numbers) {
   validateNumbers(numbers);
-  if (!numbers || !Array.isArray(numbers)) throw new Error("Input must be an array");
   return numbers.reduce((acc, curr) => acc + curr, 0);
 }
 
