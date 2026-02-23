@@ -34,22 +34,23 @@ function findMax(numbers){
 }
 
 const data1 = [-1, 2, -3];
-const data2 = [4, 5, 6];
+const data2 = [];
 
 try {
-  console.log(calculateTotal(data1))
-  console.log(calculateAverage(data1))
-  console.log(findPositive(data1))
-  console.log(findMax(data1))
+  console.log(calculateTotal(data1));
+  console.log(calculateAverage(data1));
+  console.log(findPositive(data1));
+  console.log(findMax(data1));
 
-  console.log(calculateTotal(data2))
-  console.log(calculateAverage(data2))
-  console.log(findPositive(data2))
-  console.log(findMax(data2))
+  console.log(calculateTotal(data2));
+  console.log(calculateAverage(data2));
+  console.log(findPositive(data2));
+  console.log(findMax(data2));
 } catch (error) {
   console.log(error);
+  console.log("try again 😒");
 } finally {
-  console.log("try again 😒")
+  console.log("End of process");
 }
 
 // try {
