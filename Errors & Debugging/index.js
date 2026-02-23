@@ -2,9 +2,12 @@
 
 function calculateTotal(numbers) {
  let total = 0;
- for (let i = 0; i <= numbers.length; i++) { // BUG: <= causes undefined
+ for (let i = 0; i <= numbers.length /*- 1*/; i++) { // BUG: <= causes undefined
    total += numbers[i];
+   console.log(total);
  }
+ console.log(typeof total);
+ console.log("returning:", total, typeof total);
  return total;
 }
 
